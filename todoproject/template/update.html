@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      Task Update
+    </div>
+  </div>
+  <div class="card-body">
+    <form method="POST" enctype="multipart/form-data" action="{% url 'cbvupdate' task.id %}">
+      {% csrf_token %}
+      {{ f.as_p }}
+      <button type="submit">Confirm</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+
